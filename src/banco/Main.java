@@ -3,14 +3,14 @@ package banco;
 public class Main {
 
 	public static void main(String[] args) {
-		Banco uchinaga = new Banco("Uchinaga");
+		Banco banco = new Banco("Banco 01");
 		
-		Cliente cliente1 = new Cliente("Aeri Uchinaga", "123.456.789-89");
-		Cliente cliente2 = new Cliente("Ning Yizhuo", "852.456.789-89");
+		Cliente cliente1 = new Cliente("Cliente 01", "123.456.789-89");
+		Cliente cliente2 = new Cliente("Cliente 02", "852.456.789-89");
 		
-		ContaCorrente cc1 = new ContaCorrente(cliente1, 7419, "789456-9", uchinaga);
-		ContaPoupanca cp1 = new ContaPoupanca(cliente1, 9634, "453685-7", uchinaga);
-		ContaCorrente cc2 = new ContaCorrente(cliente2, 8747, "896522-9", uchinaga);
+		ContaCorrente cc1 = new ContaCorrente(cliente1, 7419, "789456-9", banco);
+		ContaPoupanca cp1 = new ContaPoupanca(cliente1, 9634, "453685-7", banco);
+		ContaCorrente cc2 = new ContaCorrente(cliente2, 8747, "896522-9", banco);
 		
 		cc1.deposito(100);
 		cc1.transferencia(35, cp1);
@@ -24,7 +24,7 @@ public class Main {
 		cc1.imprimirSaldo();
 		
 		System.out.println(" ");
-		uchinaga.imprimirContas();
+		banco.imprimirContas();
 		cliente1.imprimirContas();
 		
 	}
